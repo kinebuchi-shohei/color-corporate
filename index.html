@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="株式会社colorは大阪を拠点に買取・リユース事業を展開。買取大吉ヨッテ杭瀬店を運営し、2028年5店舗展開を目指しています。">
+<title>株式会社color | Corporate Site</title>
+<style>
+:root {
+  --white:#ffffff; --bg:#f8f8f6; --black:#1a1a1a; --gray:#6b6b6b;
+  --light:#eeede9; --accent:#2d6a4f; --accent2:#40916c; --accent3:#74c69d;
+  --accent-light:#d8f3dc; --accent-pale:#f0faf3;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 32px;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--light);}
+.logo-nav{text-decoration:none;font-size:22px;font-weight:700;letter-spacing:0.12em;color:var(--black);}
+.logo-nav em{font-style:normal;color:var(--accent);font-weight:900;}
+nav ul{display:flex;gap:36px;list-style:none;}
+nav ul a{color:var(--gray);text-decoration:none;font-size:13px;letter-spacing:0.06em;transition:color .2s;}
+nav ul a:hover{color:var(--accent);}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 56px 80px;background:var(--white);overflow:hidden;position:relative;}
+.hero-left{position:relative;z-index:2;}
+.hero-label{font-size:11px;letter-spacing:.45em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:24px;}
+.hero-title{font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.5;letter-spacing:.04em;}
+.hero-title strong{font-weight:800;color:var(--accent);display:block;font-size:clamp(36px,4.5vw,58px);}
+.hero-sub{margin-top:24px;font-size:15px;line-height:2;color:var(--gray);max-width:440px;}
+.hero-cta{margin-top:40px;display:flex;gap:14px;}
+.btn{padding:13px 36px;font-size:13px;letter-spacing:.1em;text-decoration:none;border-radius:4px;transition:all .25s;font-weight:600;display:inline-block;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,106,79,.25);}
+.btn-secondary{border:1.5px solid var(--accent);color:var(--accent);}
+.btn-secondary:hover{background:var(--accent-light);}
+.hero-right{display:flex;justify-content:center;align-items:center;}
+.hero-graphic{width:100%;max-width:480px;}
+.trust-bar{background:var(--accent);padding:20px 56px;display:flex;justify-content:center;gap:64px;}
+.trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.9);}
+.trust-icon{opacity:.85;}
+.trust-text{font-size:13px;letter-spacing:.06em;}
+.trust-text strong{font-size:16px;font-weight:700;margin-right:4px;}
+.section{padding:96px 56px;max-width:1100px;margin:0 auto;}
+.sec-label{font-size:11px;letter-spacing:.45em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.sec-title{font-size:clamp(24px,3vw,36px);font-weight:300;letter-spacing:.06em;line-height:1.5;}
+.sec-title strong{font-weight:800;}
+.divider{width:36px;height:3px;background:var(--accent);border-radius:2px;margin:20px 0 36px;}
+.sec-body{font-size:15px;line-height:2;color:var(--gray);max-width:600px;}
+.about-wrap{background:var(--white);border-top:1px solid var(--light);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:48px;}
+.about-text p+p{margin-top:18px;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.stat-card{background:var(--accent-pale);border:1px solid var(--accent-light);border-radius:8px;padding:28px 24px;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);}
+.stat-num{font-size:36px;font-weight:200;color:var(--accent);line-height:1;}
+.stat-unit{font-size:16px;font-weight:300;}
+.stat-label{font-size:12px;color:var(--gray);margin-top:6px;letter-spacing:.08em;}
+.biz-wrap{background:var(--bg);border-top:1px solid var(--light);border-bottom:1px solid var(--light);padding:96px 56px;}
+.biz-inner{max-width:1100px;margin:0 auto;}
+.biz-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.biz-card{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:36px 28px;transition:all .25s;position:relative;}
+.biz-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:var(--accent3);}
+.biz-icon{width:52px;height:52px;background:var(--accent-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.biz-num{position:absolute;top:28px;right:28px;font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:700;}
+.biz-title{font-size:17px;font-weight:700;letter-spacing:.04em;margin-bottom:12px;}
+.biz-desc{font-size:13px;line-height:1.9;color:var(--gray);}
+.biz-badge{margin-top:20px;display:inline-block;padding:4px 12px;background:var(--accent-pale);color:var(--accent);font-size:11px;border-radius:20px;font-weight:600;}
+.vision-wrap{background:var(--accent);padding:80px 56px;}
+.vision-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.vision-text .sec-label{color:rgba(255,255,255,.7);}
+.vision-text .sec-title{color:#fff;}
+.vision-text .divider{background:rgba(255,255,255,.5);}
+.vision-text .sec-body{color:rgba(255,255,255,.8);max-width:100%;}
+.vision-timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.tl-item:last-child{border-bottom:none;}
+.tl-year{font-size:13px;font-weight:700;color:rgba(255,255,255,.5);min-width:52px;letter-spacing:.08em;padding-top:2px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);margin-top:5px;flex-shrink:0;}
+.tl-dot.active{background:#fff;}
+.tl-content{font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);}
+.tl-content strong{display:block;font-size:16px;color:#fff;margin-bottom:4px;}
+.values-wrap{background:var(--white);border-top:1px solid var(--light);padding:96px 56px;}
+.values-inner{max-width:1100px;margin:0 auto;}
+.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px;}
+.value-card{background:var(--bg);border:1px solid var(--light);border-radius:8px;padding:28px 16px;text-align:center;transition:all .25s;}
+.value-card:hover{border-color:var(--accent);background:var(--accent-pale);}
+.value-icon-wrap{width:48px;height:48px;background:var(--accent-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.value-num{font-size:10px;letter-spacing:.3em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.value-label{font-size:13px;font-weight:700;line-height:1.5;color:var(--black);}
+.msg-wrap{background:var(--bg);border-top:1px solid var(--light);padding:96px 56px;}
+.msg-inner{max-width:1100px;margin:0 auto;}
+.msg-body{font-size:15px;line-height:2.2;color:#444;}
+.msg-body p+p{margin-top:1.5em;}
+.msg-highlight{background:var(--accent-pale);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 6px 6px 0;margin:24px 0;font-size:14px;line-height:1.9;color:var(--black);font-weight:500;}
+.company-wrap{background:var(--white);border-top:1px solid var(--light);padding:96px 56px;}
+.company-inner{max-width:1100px;margin:0 auto;}
+.info-table{width:100%;border-collapse:collapse;margin-top:40px;}
+.info-table tr{border-bottom:1px solid var(--light);}
+.info-table th{padding:20px 0;width:200px;font-size:13px;font-weight:700;color:var(--black);text-align:left;vertical-align:top;letter-spacing:.06em;}
+.info-table td{padding:20px 0;font-size:14px;line-height:1.9;color:var(--gray);}
+.recruit-wrap{background:var(--bg);border-top:1px solid var(--light);padding:96px 56px;}
+.recruit-inner{max-width:1100px;margin:0 auto;}
+.recruit-intro{margin-top:48px;background:var(--white);border-radius:10px;border:1px solid var(--light);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.recruit-catch{font-size:clamp(18px,2.2vw,26px);font-weight:300;line-height:1.7;letter-spacing:.06em;}
+.recruit-catch strong{font-weight:800;color:var(--accent);}
+.recruit-points{display:flex;flex-direction:column;gap:12px;}
+.recruit-point{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.7;color:var(--gray);}
+.point-check{width:20px;height:20px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.job-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
+.job-card{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:36px 32px;transition:all .25s;}
+.job-card:hover{border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.06);}
+.job-tag{display:inline-block;padding:5px 16px;background:var(--accent-pale);color:var(--accent);font-size:11px;border-radius:20px;font-weight:700;margin-bottom:16px;letter-spacing:.08em;}
+.job-title{font-size:20px;font-weight:700;letter-spacing:.04em;margin-bottom:20px;}
+.job-cond{display:flex;flex-direction:column;gap:10px;}
+.job-row{font-size:13px;display:flex;gap:12px;align-items:baseline;color:var(--gray);}
+.job-key{font-size:11px;color:var(--accent);font-weight:700;min-width:52px;flex-shrink:0;}
+.incentive-box{margin-top:16px;padding:14px 16px;background:var(--accent-pale);border-radius:6px;font-size:12px;line-height:1.8;color:var(--accent);}
+.recruit-cta{margin-top:40px;text-align:center;}
+.recruit-req{margin-top:32px;background:var(--white);border:1px solid var(--light);border-radius:10px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.req-title{font-size:14px;font-weight:700;margin-bottom:14px;color:var(--black);}
+.req-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.req-list li{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.6;}
+.req-list li::before{content:'—';color:var(--accent);font-weight:700;flex-shrink:0;}
+.contact-wrap{background:var(--white);border-top:1px solid var(--light);padding:80px 56px;text-align:center;}
+.contact-inner{max-width:520px;margin:0 auto;}
+.contact-body{font-size:15px;line-height:2;color:var(--gray);margin:24px 0 36px;}
+footer{background:var(--black);color:rgba(255,255,255,.35);padding:36px 56px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.08em;}
+.footer-logo{color:#fff;font-size:16px;font-weight:200;letter-spacing:.22em;}
+.footer-logo em{font-style:normal;color:var(--accent);font-weight:700;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo-nav"><em>c</em>olor</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#business">Business</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#message">Message</a></li>
+    <li><a href="#company">Company</a></li>
+    <li><a href="#recruit">Recruit</a></li>
+  </ul>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-label">株式会社 color — Osaka, Japan</div>
+    <h1 class="hero-title">人の可能性に、正直に向き合う。<br><strong>それが私たちの事業です。</strong></h1>
+    <p class="hero-sub">大阪を拠点に買取・リユース事業を展開。スタッフ一人ひとりの個性を活かし、地域とお客様に誠実に向き合い続けます。</p>
+    <div class="hero-cta">
+      <a href="#about" class="btn btn-primary">会社を知る</a>
+      <a href="recruit.html" class="btn btn-secondary">採用情報</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg class="hero-graphic" viewBox="0 0 480 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#40916c"/></marker></defs>
+      <circle cx="240" cy="200" r="160" fill="#d8f3dc" opacity="0.4"/>
+      <circle cx="240" cy="200" r="120" fill="#d8f3dc" opacity="0.3"/>
+      <rect x="195" y="165" width="90" height="70" rx="4" fill="#2d6a4f"/>
+      <rect x="207" y="183" width="26" height="28" rx="2" fill="white" opacity="0.9"/>
+      <rect x="247" y="183" width="26" height="14" rx="2" fill="white" opacity="0.6"/>
+      <polygon points="185,167 240,135 295,167" fill="#40916c"/>
+      <rect x="226" y="150" width="28" height="4" rx="2" fill="white" opacity="0.5"/>
+      <text x="240" y="248" text-anchor="middle" font-size="11" fill="#2d6a4f" font-weight="700" font-family="sans-serif">買取大吉</text>
+      <text x="240" y="263" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">ヨッテ杭瀬店</text>
+      <circle cx="240" cy="52" r="36" fill="white" stroke="#b7e4c7" stroke-width="2"/>
+      <text x="240" y="47" text-anchor="middle" font-size="12" fill="#2d6a4f" font-weight="700" font-family="sans-serif">貴金属</text>
+      <text x="240" y="63" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">Gold / Silver</text>
+      <circle cx="396" cy="170" r="36" fill="white" stroke="#b7e4c7" stroke-width="2"/>
+      <text x="396" y="165" text-anchor="middle" font-size="12" fill="#2d6a4f" font-weight="700" font-family="sans-serif">ブランド品</text>
+      <text x="396" y="181" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">Brand</text>
+      <circle cx="84" cy="170" r="36" fill="white" stroke="#b7e4c7" stroke-width="2"/>
+      <text x="84" y="165" text-anchor="middle" font-size="12" fill="#2d6a4f" font-weight="700" font-family="sans-serif">時計</text>
+      <text x="84" y="181" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">Watch</text>
+      <circle cx="356" cy="300" r="36" fill="white" stroke="#b7e4c7" stroke-width="2"/>
+      <text x="356" y="295" text-anchor="middle" font-size="12" fill="#2d6a4f" font-weight="700" font-family="sans-serif">カメラ</text>
+      <text x="356" y="311" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">Camera</text>
+      <circle cx="124" cy="300" r="36" fill="white" stroke="#b7e4c7" stroke-width="2"/>
+      <text x="124" y="295" text-anchor="middle" font-size="12" fill="#2d6a4f" font-weight="700" font-family="sans-serif">その他</text>
+      <text x="124" y="311" text-anchor="middle" font-size="10" fill="#6b6b6b" font-family="sans-serif">Others</text>
+      <path d="M240 88 Q245 118 240 135" stroke="#40916c" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+      <path d="M362 178 Q328 188 295 195" stroke="#40916c" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+      <path d="M120 178 Q158 188 185 198" stroke="#40916c" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+      <path d="M328 278 Q300 255 278 240" stroke="#40916c" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+      <path d="M152 278 Q178 258 202 242" stroke="#40916c" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+      <rect x="170" y="348" width="140" height="30" rx="15" fill="#2d6a4f"/>
+      <text x="240" y="368" text-anchor="middle" font-size="12" fill="white" font-weight="700" font-family="sans-serif">店頭持込買取</text>
+    </svg>
+  </div>
+</div>
+<div class="trust-bar">
+  <div class="trust-item"><svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>1</strong>店舗運営中</span></div>
+  <div class="trust-item"><svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>4</strong>名のスタッフ</span></div>
+  <div class="trust-item"><svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="white" stroke-width="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>2024</strong>年4月設立</span></div>
+  <div class="trust-item"><svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.1 3.2 1.2-6.8-5-4.9 6.9-1z" stroke="white" stroke-width="2"/></svg><span class="trust-text">買取大吉<strong>FC</strong>加盟</span></div>
+</div>
+<div id="about" class="about-wrap">
+  <div class="section">
+    <div class="sec-label">About Us</div>
+    <h2 class="sec-title">「個性」を、<strong>事業の競争力に変える。</strong></h2>
+    <div class="divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="sec-body">株式会社colorは、2024年4月に大阪で設立した買取・リユース事業会社です。買取大吉フランチャイズのパートナーとして、尼崎・杭瀬エリアにて店舗を運営しています。</p>
+        <p class="sec-body" style="margin-top:18px">社名「color」は、色とりどりの個性を意味します。学歴・経験・出身にかかわらず、スタッフ一人ひとりの強みを最大化する環境を整えることが、私たちの経営の根幹です。</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num">2024<span class="stat-unit">年</span></div><div class="stat-label">設立年月</div></div>
+        <div class="stat-card"><div class="stat-num">大阪</div><div class="stat-label">尼崎・杭瀬エリア</div></div>
+        <div class="stat-card"><div class="stat-num">4<span class="stat-unit">名</span></div><div class="stat-label">従業員数</div></div>
+        <div class="stat-card"><div class="stat-num">10<span class="stat-unit">店舗</span></div><div class="stat-label">2028年目標</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="business" class="biz-wrap">
+  <div class="biz-inner">
+    <div class="sec-label">Business</div>
+    <h2 class="sec-title">私たちの<strong>事業領域</strong></h2>
+    <div class="divider"></div>
+    <div class="biz-cards">
+      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2d6a4f" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="biz-num">01</div><div class="biz-title">買取・リユース事業</div><div class="biz-desc">貴金属・ブランド品・時計・カメラなど幅広い品目を対象に、店頭持込にて買取を実施。「買取大吉」ブランドの信頼と即日対応力を武器に、地域No.1の買取店を目指します。</div><div class="biz-badge">年中無休 10:00〜19:00</div></div>
+      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#2d6a4f" stroke-width="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="biz-num">02</div><div class="biz-title">店舗運営・オペレーション</div><div class="biz-desc">接客・鑑定・査定・販売までを一貫して担うスタッフ体制を構築。リピート率と口コミ評価を重要指標とし、顧客満足度の向上と地域への信頼醸成を通じて事業基盤を強化します。</div><div class="biz-badge">接客品質・査定精度を重視</div></div>
+      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#2d6a4f" stroke-width="2"/><path d="M9 22V12h6v10" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="biz-num">03</div><div class="biz-title">多店舗展開・経営者輩出</div><div class="biz-desc">2028年までに関西圏内10店舗以上の展開を計画。優秀なスタッフを店長・経営者として登用し、子会社設立・経営者3名以上の輩出を目指します。</div><div class="biz-badge">2028年 10店舗目標</div></div>
+    </div>
+  </div>
+</div>
+<div id="vision" class="vision-wrap">
+  <div class="vision-inner">
+    <div class="vision-text">
+      <div class="sec-label">Vision</div>
+      <h2 class="sec-title" style="color:#fff">スタッフの成長が、<strong style="color:#fff">事業の成長。</strong></h2>
+      <div class="divider"></div>
+      <p class="sec-body">高付加価値な買取事業は、スタッフへの高い報酬還元を可能にします。仲間が成果を出せる環境を整え続けることが、持続的な事業成長の源泉です。</p>
+    </div>
+    <div class="vision-timeline">
+      <div class="tl-item"><div class="tl-year">2024</div><div class="tl-dot active"></div><div class="tl-content"><strong>1店舗目 開業</strong>買取大吉 ヨッテ杭瀬店 運営開始</div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-dot"></div><div class="tl-content"><strong>2〜5店舗目 展開</strong>関西圏内への多店舗展開・店長登用</div></div>
+      <div class="tl-item"><div class="tl-year">2028</div><div class="tl-dot"></div><div class="tl-content"><strong>10店舗以上・経営者輩出</strong>子会社設立・経営者3名以上の育成</div></div>
+      <div class="tl-item"><div class="tl-year">将来</div><div class="tl-dot"></div><div class="tl-content"><strong>独自FC・他事業参入</strong>独自ノウハウのFC化・M&Aによる事業拡大</div></div>
+    </div>
+  </div>
+</div>
+<div id="values" class="values-wrap">
+  <div class="values-inner">
+    <div class="sec-label">Values</div>
+    <h2 class="sec-title">私たちが大切にする<strong>5つの価値観</strong></h2>
+    <div class="divider"></div>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2d6a4f" stroke-width="2"/><path d="M12 8v4l3 3" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="value-num">01</div><div class="value-label">自責で捉える</div></div>
+      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#2d6a4f" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#2d6a4f" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="value-num">02</div><div class="value-label">仲間への感謝</div></div>
+      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="value-num">03</div><div class="value-label">凡事徹底</div></div>
+      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="value-num">04</div><div class="value-label">誠実であること</div></div>
+      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="value-num">05</div><div class="value-label">素直に元気よく</div></div>
+    </div>
+  </div>
+</div>
+<div id="message" class="msg-wrap">
+  <div class="msg-inner">
+    <div class="sec-label">Message</div>
+    <h2 class="sec-title">代表<strong>メッセージ</strong></h2>
+    <div class="divider"></div>
+    <div style="margin-top:48px">
+      <div style="display:flex;align-items:center;gap:24px;padding:32px;background:var(--white);border:1px solid var(--light);border-radius:10px;margin-bottom:40px">
+        <div style="width:4px;height:80px;background:var(--accent);border-radius:2px;flex-shrink:0"></div>
+        <div>
+          <div style="font-size:22px;font-weight:700;letter-spacing:.08em">富永 隆幸</div>
+          <div style="font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.12em;margin-top:6px">代表取締役 ／ 株式会社color</div>
+          <div style="display:flex;gap:24px;margin-top:14px">
+            <div style="font-size:12px;color:var(--gray);display:flex;gap:8px"><span style="color:var(--accent);font-weight:700">18歳</span>美容師としてキャリアスタート</div>
+            <div style="font-size:12px;color:var(--gray);display:flex;gap:8px"><span style="color:var(--accent);font-weight:700">24歳</span>個人事業主として独立</div>
+            <div style="font-size:12px;color:var(--gray);display:flex;gap:8px"><span style="color:var(--accent);font-weight:700">現在</span>株式会社diptyMOILA 代表・スタッフ30名超</div>
+          </div>
+        </div>
+      </div>
+      <div class="msg-body">
+        <p>株式会社colorを設立した理由は、シンプルです。</p>
+        <p>18歳から美容の世界に入り、独立・経営を経て一つの確信を持つようになりました。個人の能力や姿勢とは無関係に、所属する業界や組織の構造が、報酬とキャリアの天井を決めてしまうことがある。それは個人の問題ではなく、仕組みの問題です。</p>
+        <div class="msg-highlight">買取事業を選んだのは、高付加価値かつ利益率の高い事業構造が、スタッフへの正当な還元を可能にするからです。美容室経営で培った「人の可能性を引き出し、成果につなげる」組織運営のノウハウを、この事業に持ち込む。それが株式会社color設立の出発点でした。</div>
+        <p>「color」という社名には、一人ひとりの個性をそのまま活かしたいという想いを込めています。均一な人材ではなく、それぞれの強みで成果を出せる組織こそが、長期的に強い事業をつくると確信しています。</p>
+        <p style="margin-top:32px;font-size:14px;font-weight:700;color:var(--black);letter-spacing:.08em">代表取締役　富永 隆幸</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="company" class="company-wrap">
+  <div class="company-inner">
+    <div class="sec-label">Company</div>
+    <h2 class="sec-title">会社<strong>概要</strong></h2>
+    <div class="divider"></div>
+    <table class="info-table">
+      <tr><th>会社名</th><td>株式会社color</td></tr>
+      <tr><th>代表取締役</th><td>富永 隆幸</td></tr>
+      <tr><th>設立</th><td>2024年4月23日</td></tr>
+      <tr><th>従業員数</th><td>4名</td></tr>
+      <tr><th>事業内容</th><td>買取・リユース事業（買取大吉 ヨッテ杭瀬店 運営）</td></tr>
+      <tr><th>店舗営業時間</th><td>10:00〜19:00（年中無休）</td></tr>
+      <tr><th>お問い合わせ</th><td>kinebuchi.shohei@gmail.com　／　090-1773-5703</td></tr>
+    </table>
+  </div>
+</div>
+<div id="recruit" class="recruit-wrap">
+  <div class="recruit-inner">
+    <div class="sec-label">Recruit</div>
+    <h2 class="sec-title">一緒に、<strong>個性を輝かせる仕事をしよう。</strong></h2>
+    <div class="divider"></div>
+    <div class="recruit-intro">
+      <div><div class="recruit-catch">資格も学歴も、<br><strong>ここでは関係ない。</strong></div></div>
+      <div class="recruit-points">
+        <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>未経験でも研修制度で着実にスキルアップ</div>
+        <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>成果はインセンティブでしっかり還元</div>
+        <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>店長・経営者へのキャリアパスあり</div>
+        <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>年中無休・残業なしの明確な就業環境</div>
+      </div>
+    </div>
+    <div class="job-cards">
+      <div class="job-card"><div class="job-tag">アルバイト</div><div class="job-title">接客・査定スタッフ</div><div class="job-cond"><div class="job-row"><span class="job-key">給与</span>日給 15,000円</div><div class="job-row"><span class="job-key">勤務時間</span>9:45〜19:15（休憩1.5h）</div><div class="job-row"><span class="job-key">勤務日数</span>週2日以上</div></div><div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋2万円、以降50万円ごとに＋2万円（上限20万円）</div></div>
+      <div class="job-card"><div class="job-tag">業務委託</div><div class="job-title">査定・店舗管理スタッフ</div><div class="job-cond"><div class="job-row"><span class="job-key">報酬</span>月額 35〜45万円</div><div class="job-row"><span class="job-key">稼働</span>週5日（月22日）</div></div><div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋5万円、以降50万円ごとに＋5万円（上限50万円）</div></div>
+    </div>
+    <div class="recruit-req">
+      <div><div class="req-title">応募要件（共通）</div><ul class="req-list"><li>高卒以上</li><li>社会人経験2年以上</li><li>45歳まで</li></ul></div>
+      <div><div class="req-title">求める人物像</div><ul class="req-list"><li>明るく元気よく挨拶できる方</li><li>自責思考で仲間に感謝・応援できる方</li><li>コツコツと誠実に努力できる方</li></ul></div>
+    </div>
+    <div class="recruit-cta"><a href="recruit.html" class="btn btn-primary">採用情報の詳細を見る</a></div>
+  </div>
+</div>
+<footer>
+  <span class="footer-logo"><em>c</em>olor Inc.</span>
+  <span>© 2024 株式会社color. All rights reserved.</span>
+</footer>
+</body>
+</html>
