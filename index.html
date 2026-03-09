@@ -6,183 +6,255 @@
 <meta name="description" content="株式会社colorは大阪を拠点に買取・リユース事業を展開。買取大吉ヨッテ杭瀬店を運営し、2028年10店舗展開を目指しています。">
 <title>株式会社color | Corporate Site</title>
 <style>
-:root{--white:#ffffff;--bg:#f8f8f6;--black:#1a1a1a;--gray:#6b6b6b;--light:#eeede9;--accent:#2d6a4f;--accent2:#40916c;--accent3:#74c69d;--accent-light:#d8f3dc;--accent-pale:#f0faf3;}
+:root{
+  --white:#ffffff;--bg:#f8f8f6;--black:#1a1a1a;--gray:#6b6b6b;
+  --light:#eeede9;--accent:#2d6a4f;--accent2:#40916c;--accent3:#74c69d;
+  --accent-light:#d8f3dc;--accent-pale:#f0faf3;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 20px;height:60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--light);}
-.logo-nav{text-decoration:none;font-size:22px;font-weight:700;letter-spacing:0.12em;color:var(--black);}
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 20px;height:56px;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--light);
+}
+.logo-nav{text-decoration:none;font-size:20px;font-weight:700;letter-spacing:0.12em;color:var(--black);}
 .logo-nav em{font-style:normal;color:var(--accent);font-weight:900;}
-.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links{display:none;gap:28px;list-style:none;}
 .nav-links a{color:var(--gray);text-decoration:none;font-size:13px;letter-spacing:0.06em;transition:color .2s;}
 .nav-links a:hover{color:var(--accent);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .hamburger span{width:24px;height:2px;background:var(--black);border-radius:2px;transition:all .3s;}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--light);z-index:99;padding:16px 0;}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid var(--light);z-index:99;padding:8px 0;}
 .mobile-menu.open{display:block;}
 .mobile-menu a{display:block;padding:14px 24px;color:var(--gray);text-decoration:none;font-size:15px;border-bottom:1px solid var(--light);}
 .mobile-menu a:last-child{border-bottom:none;}
 
-/* HERO */
-.hero{padding:80px 24px 60px;background:var(--white);overflow:hidden;}
-.hero-label{font-size:10px;letter-spacing:.4em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:16px;}
-.hero-title{font-size:clamp(28px,7vw,52px);font-weight:300;line-height:1.5;letter-spacing:.04em;}
-.hero-title strong{font-weight:800;color:var(--accent);display:block;font-size:clamp(30px,7.5vw,58px);}
-.hero-sub{margin-top:16px;font-size:14px;line-height:2;color:var(--gray);}
-.hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;}
+/* ===== HERO ===== */
+.hero{
+  padding:72px 20px 48px;
+  background:var(--white);
+  display:flex;flex-direction:column;gap:32px;
+}
+.hero-label{font-size:10px;letter-spacing:.4em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.hero-title{font-size:clamp(26px,8vw,48px);font-weight:300;line-height:1.5;letter-spacing:.04em;}
+.hero-title strong{font-weight:800;color:var(--accent);display:block;font-size:clamp(28px,8.5vw,54px);}
+.hero-sub{margin-top:12px;font-size:14px;line-height:2;color:var(--gray);}
+.hero-cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;}
 .btn{padding:13px 28px;font-size:13px;letter-spacing:.08em;text-decoration:none;border-radius:4px;transition:all .25s;font-weight:600;display:inline-block;}
 .btn-primary{background:var(--accent);color:#fff;}
 .btn-primary:hover{background:var(--accent2);}
 .btn-secondary{border:1.5px solid var(--accent);color:var(--accent);}
 .btn-secondary:hover{background:var(--accent-light);}
-.hero-graphic-wrap{margin-top:32px;display:flex;justify-content:center;}
-.hero-graphic{width:100%;max-width:340px;}
+.hero-graphic-wrap{display:flex;justify-content:center;}
+.hero-graphic{width:100%;max-width:320px;}
 
-/* TRUST BAR */
-.trust-bar{background:var(--accent);padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+/* ===== TRUST BAR ===== */
+.trust-bar{
+  background:var(--accent);padding:16px 20px;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
 .trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.9);}
-.trust-text{font-size:12px;letter-spacing:.04em;}
+.trust-text{font-size:12px;letter-spacing:.04em;line-height:1.4;}
 .trust-text strong{font-size:15px;font-weight:700;margin-right:2px;}
 
-/* SECTION */
-.section{padding:60px 24px;max-width:1100px;margin:0 auto;}
+/* ===== SECTION BASE ===== */
+.section{padding:56px 20px;max-width:1100px;margin:0 auto;}
 .sec-label{font-size:10px;letter-spacing:.4em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:10px;}
-.sec-title{font-size:clamp(20px,5vw,36px);font-weight:300;letter-spacing:.04em;line-height:1.5;}
+.sec-title{font-size:clamp(22px,6vw,36px);font-weight:300;letter-spacing:.04em;line-height:1.5;}
 .sec-title strong{font-weight:800;}
 .divider{width:32px;height:3px;background:var(--accent);border-radius:2px;margin:14px 0 28px;}
 .sec-body{font-size:14px;line-height:2;color:var(--gray);}
 
-/* ABOUT */
+/* ===== ABOUT ===== */
 .about-wrap{background:var(--white);border-top:1px solid var(--light);}
-.about-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px;}
+.about-grid{display:flex;flex-direction:column;gap:28px;margin-top:28px;}
 .about-text p+p{margin-top:14px;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.stat-card{background:var(--accent-pale);border:1px solid var(--accent-light);border-radius:8px;padding:20px 16px;position:relative;overflow:hidden;}
+.stat-card{
+  background:var(--accent-pale);border:1px solid var(--accent-light);
+  border-radius:8px;padding:18px 14px;position:relative;overflow:hidden;
+}
 .stat-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);}
-.stat-num{font-size:28px;font-weight:200;color:var(--accent);line-height:1;}
-.stat-unit{font-size:14px;font-weight:300;}
+.stat-num{font-size:26px;font-weight:200;color:var(--accent);line-height:1;}
+.stat-unit{font-size:13px;font-weight:300;}
 .stat-label{font-size:11px;color:var(--gray);margin-top:4px;letter-spacing:.06em;}
 
-/* BUSINESS */
-.biz-wrap{background:var(--bg);border-top:1px solid var(--light);border-bottom:1px solid var(--light);padding:60px 24px;}
+/* ===== BUSINESS ===== */
+.biz-wrap{background:var(--bg);border-top:1px solid var(--light);border-bottom:1px solid var(--light);padding:56px 20px;}
 .biz-inner{max-width:1100px;margin:0 auto;}
-.biz-cards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px;}
-.biz-card{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:28px 20px;position:relative;}
-.biz-icon{width:48px;height:48px;background:var(--accent-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.biz-num{position:absolute;top:24px;right:20px;font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:700;}
+.biz-cards{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+.biz-card{
+  background:var(--white);border:1px solid var(--light);
+  border-radius:10px;padding:24px 18px;position:relative;
+}
+.biz-icon{width:44px;height:44px;background:var(--accent-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.biz-num{position:absolute;top:20px;right:18px;font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:700;}
 .biz-title{font-size:16px;font-weight:700;letter-spacing:.04em;margin-bottom:10px;}
 .biz-desc{font-size:13px;line-height:1.9;color:var(--gray);}
-.biz-badge{margin-top:16px;display:inline-block;padding:4px 12px;background:var(--accent-pale);color:var(--accent);font-size:11px;border-radius:20px;font-weight:600;}
+.biz-badge{margin-top:14px;display:inline-block;padding:4px 12px;background:var(--accent-pale);color:var(--accent);font-size:11px;border-radius:20px;font-weight:600;}
 
-/* VISION */
-.vision-wrap{background:var(--accent);padding:60px 24px;}
-.vision-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;}
+/* ===== VISION ===== */
+.vision-wrap{background:var(--accent);padding:56px 20px;}
+.vision-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:36px;}
 .vision-text .sec-label{color:rgba(255,255,255,.7);}
 .vision-text .sec-title{color:#fff;}
 .vision-text .divider{background:rgba(255,255,255,.5);}
 .vision-text .sec-body{color:rgba(255,255,255,.8);}
 .vision-timeline{display:flex;flex-direction:column;gap:0;}
-.tl-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.tl-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);}
 .tl-item:last-child{border-bottom:none;}
-.tl-year{font-size:12px;font-weight:700;color:rgba(255,255,255,.5);min-width:44px;padding-top:2px;}
-.tl-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);margin-top:5px;flex-shrink:0;}
+.tl-year{font-size:12px;font-weight:700;color:rgba(255,255,255,.55);min-width:40px;padding-top:3px;flex-shrink:0;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);margin-top:6px;flex-shrink:0;}
 .tl-dot.active{background:#fff;}
 .tl-content{font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);}
 .tl-content strong{display:block;font-size:15px;color:#fff;margin-bottom:4px;}
 
-/* VALUES */
-.values-wrap{background:var(--white);border-top:1px solid var(--light);padding:60px 24px;}
+/* ===== VALUES ===== */
+.values-wrap{background:var(--white);border-top:1px solid var(--light);padding:56px 20px;}
 .values-inner{max-width:1100px;margin:0 auto;}
-.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;}
-.value-card{background:var(--bg);border:1px solid var(--light);border-radius:8px;padding:20px 12px;text-align:center;}
-.value-icon-wrap{width:44px;height:44px;background:var(--accent-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+.values-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;
+}
+.value-card{
+  background:var(--bg);border:1px solid var(--light);
+  border-radius:8px;padding:18px 10px;text-align:center;
+}
+.value-icon-wrap{
+  width:42px;height:42px;background:var(--accent-pale);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
+}
 .value-num{font-size:10px;letter-spacing:.3em;color:var(--accent);font-weight:700;margin-bottom:6px;}
 .value-label{font-size:12px;font-weight:700;line-height:1.5;color:var(--black);}
 
-/* MESSAGE */
-.msg-wrap{background:var(--bg);border-top:1px solid var(--light);padding:60px 24px;}
+/* ===== MESSAGE ===== */
+.msg-wrap{background:var(--bg);border-top:1px solid var(--light);padding:56px 20px;}
 .msg-inner{max-width:1100px;margin:0 auto;}
-.msg-profile{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:28px 20px;margin-top:32px;margin-bottom:28px;}
+.msg-profile{
+  background:var(--white);border:1px solid var(--light);
+  border-radius:10px;padding:24px 18px;margin-top:28px;margin-bottom:24px;
+}
 .msg-name{font-size:20px;font-weight:700;letter-spacing:.06em;}
 .msg-role{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-top:6px;}
-.msg-career{margin-top:16px;padding-top:16px;border-top:1px solid var(--light);display:flex;flex-direction:column;gap:6px;}
-.career-item{font-size:12px;color:var(--gray);display:flex;gap:8px;}
-.career-year{color:var(--accent);font-weight:700;min-width:36px;}
+.msg-career{margin-top:16px;padding-top:16px;border-top:1px solid var(--light);display:flex;flex-direction:column;gap:8px;}
+.career-item{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.6;}
+.career-year{color:var(--accent);font-weight:700;min-width:40px;flex-shrink:0;}
 .msg-body{font-size:14px;line-height:2.2;color:#444;}
 .msg-body p+p{margin-top:1.4em;}
-.msg-highlight{background:var(--accent-pale);border-left:3px solid var(--accent);padding:14px 16px;border-radius:0 6px 6px 0;margin:20px 0;font-size:13px;line-height:1.9;color:var(--black);font-weight:500;}
+.msg-highlight{
+  background:var(--accent-pale);border-left:3px solid var(--accent);
+  padding:14px 16px;border-radius:0 6px 6px 0;
+  margin:20px 0;font-size:13px;line-height:1.9;color:var(--black);font-weight:500;
+}
 
-/* COMPANY */
-.company-wrap{background:var(--white);border-top:1px solid var(--light);padding:60px 24px;}
+/* ===== COMPANY ===== */
+.company-wrap{background:var(--white);border-top:1px solid var(--light);padding:56px 20px;}
 .company-inner{max-width:1100px;margin:0 auto;}
-.info-table{width:100%;border-collapse:collapse;margin-top:28px;}
+.info-table{width:100%;border-collapse:collapse;margin-top:24px;}
 .info-table tr{border-bottom:1px solid var(--light);}
-.info-table th{padding:14px 0;width:100px;font-size:12px;font-weight:700;color:var(--black);text-align:left;vertical-align:top;letter-spacing:.04em;}
-.info-table td{padding:14px 0;font-size:13px;line-height:1.8;color:var(--gray);}
+.info-table th{
+  padding:14px 0;width:90px;font-size:12px;font-weight:700;
+  color:var(--black);text-align:left;vertical-align:top;letter-spacing:.04em;
+}
+.info-table td{padding:14px 0 14px 8px;font-size:13px;line-height:1.8;color:var(--gray);}
 
-/* RECRUIT */
-.recruit-wrap{background:var(--bg);border-top:1px solid var(--light);padding:60px 24px;}
+/* ===== RECRUIT ===== */
+.recruit-wrap{background:var(--bg);border-top:1px solid var(--light);padding:56px 20px;}
 .recruit-inner{max-width:1100px;margin:0 auto;}
-.recruit-intro{margin-top:32px;background:var(--white);border-radius:10px;border:1px solid var(--light);padding:28px 20px;}
-.recruit-catch{font-size:clamp(18px,5vw,26px);font-weight:300;line-height:1.7;letter-spacing:.04em;margin-bottom:20px;}
+.recruit-intro{
+  margin-top:28px;background:var(--white);
+  border-radius:10px;border:1px solid var(--light);padding:24px 18px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.recruit-catch{font-size:clamp(18px,5vw,24px);font-weight:300;line-height:1.7;letter-spacing:.04em;margin-bottom:4px;}
 .recruit-catch strong{font-weight:800;color:var(--accent);}
 .recruit-points{display:flex;flex-direction:column;gap:10px;}
 .recruit-point{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.7;color:var(--gray);}
 .point-check{width:20px;height:20px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.job-cards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px;}
-.job-card{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:24px 20px;}
+.job-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.job-card{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:22px 18px;}
 .job-tag{display:inline-block;padding:5px 14px;background:var(--accent-pale);color:var(--accent);font-size:11px;border-radius:20px;font-weight:700;margin-bottom:12px;letter-spacing:.06em;}
-.job-title{font-size:18px;font-weight:700;letter-spacing:.04em;margin-bottom:16px;}
+.job-title{font-size:18px;font-weight:700;letter-spacing:.04em;margin-bottom:14px;}
 .job-cond{display:flex;flex-direction:column;gap:8px;}
 .job-row{font-size:13px;display:flex;gap:10px;align-items:baseline;color:var(--gray);}
-.job-key{font-size:11px;color:var(--accent);font-weight:700;min-width:52px;flex-shrink:0;}
+.job-key{font-size:11px;color:var(--accent);font-weight:700;min-width:56px;flex-shrink:0;}
 .incentive-box{margin-top:14px;padding:12px 14px;background:var(--accent-pale);border-radius:6px;font-size:12px;line-height:1.8;color:var(--accent);}
-.recruit-cta{margin-top:32px;text-align:center;}
-.recruit-req{margin-top:24px;background:var(--white);border:1px solid var(--light);border-radius:10px;padding:24px 20px;display:grid;grid-template-columns:1fr;gap:24px;}
-.req-title{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--black);}
+.recruit-cta{margin-top:28px;text-align:center;}
+.recruit-req{
+  margin-top:20px;background:var(--white);border:1px solid var(--light);
+  border-radius:10px;padding:22px 18px;
+  display:flex;flex-direction:column;gap:20px;
+}
+.req-title{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--black);}
 .req-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .req-list li{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.6;}
 .req-list li::before{content:'—';color:var(--accent);font-weight:700;flex-shrink:0;}
 
-/* FOOTER */
-footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;display:flex;flex-direction:column;gap:8px;align-items:center;font-size:12px;letter-spacing:.06em;text-align:center;}
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);color:rgba(255,255,255,.35);
+  padding:24px 20px;display:flex;flex-direction:column;
+  gap:8px;align-items:center;font-size:12px;letter-spacing:.06em;text-align:center;
+}
 .footer-logo{color:#fff;font-size:16px;font-weight:200;letter-spacing:.22em;}
 .footer-logo em{font-style:normal;color:var(--accent);font-weight:700;}
 
-/* PC */
+/* ===== PC (768px以上) ===== */
 @media(min-width:768px){
   nav{padding:0 32px;height:64px;}
   .hamburger{display:none!important;}
   .nav-links{display:flex!important;}
   .mobile-menu{display:none!important;}
-  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 56px 80px;}
+
+  .hero{
+    display:grid;grid-template-columns:1fr 1fr;
+    align-items:center;padding:100px 56px 80px;gap:0;
+  }
   .hero-graphic-wrap{margin-top:0;}
+
   .trust-bar{display:flex;justify-content:center;gap:64px;padding:20px 56px;}
+
   .section{padding:96px 56px;}
-  .about-grid{grid-template-columns:1fr 1fr;gap:72px;margin-top:48px;}
+
+  .about-grid{flex-direction:row;gap:72px;margin-top:48px;}
+  .about-grid .about-text,.about-grid .stats-grid{flex:1;}
+
   .biz-wrap{padding:96px 56px;}
-  .biz-cards{grid-template-columns:repeat(3,1fr);}
+  .biz-cards{flex-direction:row;}
+  .biz-cards .biz-card{flex:1;}
+
   .vision-wrap{padding:80px 56px;}
-  .vision-inner{grid-template-columns:1fr 1fr;gap:72px;}
+  .vision-inner{flex-direction:row;gap:72px;}
+
   .values-wrap{padding:96px 56px;}
   .values-grid{grid-template-columns:repeat(5,1fr);}
+
   .msg-wrap{padding:96px 56px;}
   .msg-profile{display:flex;align-items:flex-start;gap:24px;padding:32px;}
+
   .company-wrap{padding:96px 56px;}
   .info-table th{width:200px;font-size:13px;}
   .info-table td{font-size:14px;}
+
   .recruit-wrap{padding:96px 56px;}
-  .recruit-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:48px;}
-  .job-cards{grid-template-columns:1fr 1fr;}
-  .recruit-req{grid-template-columns:1fr 1fr;}
+  .recruit-intro{flex-direction:row;gap:48px;padding:40px;}
+  .job-cards{flex-direction:row;}
+  .job-cards .job-card{flex:1;}
+  .recruit-req{flex-direction:row;}
+  .recruit-req>div{flex:1;}
+
   footer{flex-direction:row;justify-content:space-between;padding:36px 56px;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="logo-nav"><em>c</em>olor</a>
   <ul class="nav-links">
@@ -206,6 +278,7 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   <a href="#recruit" onclick="closeMenu()">Recruit</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
     <div class="hero-label">株式会社 color — Osaka, Japan</div>
@@ -253,13 +326,27 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   </div>
 </div>
 
+<!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>1</strong>店舗運営中</span></div>
-  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>4</strong>名のスタッフ</span></div>
-  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="white" stroke-width="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="white" stroke-width="2"/></svg><span class="trust-text"><strong>2024</strong>年4月設立</span></div>
-  <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.1 3.2 1.2-6.8-5-4.9 6.9-1z" stroke="white" stroke-width="2"/></svg><span class="trust-text">買取大吉<strong>FC</strong>加盟</span></div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" stroke-width="2"/></svg>
+    <span class="trust-text"><strong>1</strong>店舗運営中</span>
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="white" stroke-width="2"/></svg>
+    <span class="trust-text"><strong>4</strong>名のスタッフ</span>
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="white" stroke-width="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="white" stroke-width="2"/></svg>
+    <span class="trust-text"><strong>2024</strong>年4月設立</span>
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.1 3.2 1.2-6.8-5-4.9 6.9-1z" stroke="white" stroke-width="2"/></svg>
+    <span class="trust-text">買取大吉<strong>FC</strong>加盟</span>
+  </div>
 </div>
 
+<!-- ABOUT -->
 <div id="about" class="about-wrap">
   <div class="section">
     <div class="sec-label">About Us</div>
@@ -280,19 +367,39 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   </div>
 </div>
 
+<!-- BUSINESS -->
 <div id="business" class="biz-wrap">
   <div class="biz-inner">
     <div class="sec-label">Business</div>
     <h2 class="sec-title">私たちの<strong>事業領域</strong></h2>
     <div class="divider"></div>
     <div class="biz-cards">
-      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2d6a4f" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="biz-num">01</div><div class="biz-title">買取・リユース事業</div><div class="biz-desc">貴金属・ブランド品・時計・カメラなど幅広い品目を対象に、店頭持込にて買取を実施。「買取大吉」ブランドの信頼と即日対応力を武器に、地域No.1の買取店を目指します。</div><div class="biz-badge">年中無休 10:00〜19:00</div></div>
-      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#2d6a4f" stroke-width="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="biz-num">02</div><div class="biz-title">店舗運営・オペレーション</div><div class="biz-desc">接客・鑑定・査定・販売までを一貫して担うスタッフ体制を構築。リピート率と口コミ評価を重要指標とし、顧客満足度の向上と地域への信頼醸成を通じて事業基盤を強化します。</div><div class="biz-badge">接客品質・査定精度を重視</div></div>
-      <div class="biz-card"><div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#2d6a4f" stroke-width="2"/><path d="M9 22V12h6v10" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="biz-num">03</div><div class="biz-title">多店舗展開・経営者輩出</div><div class="biz-desc">2028年までに関西圏内10店舗以上の展開を計画。優秀なスタッフを店長・経営者として登用し、子会社設立・経営者3名以上の輩出を目指します。</div><div class="biz-badge">2028年 10店舗目標</div></div>
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2d6a4f" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="biz-num">01</div>
+        <div class="biz-title">買取・リユース事業</div>
+        <div class="biz-desc">貴金属・ブランド品・時計・カメラなど幅広い品目を対象に、店頭持込にて買取を実施。「買取大吉」ブランドの信頼と即日対応力を武器に、地域No.1の買取店を目指します。</div>
+        <div class="biz-badge">年中無休 10:00〜19:00</div>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#2d6a4f" stroke-width="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke="#2d6a4f" stroke-width="2"/></svg></div>
+        <div class="biz-num">02</div>
+        <div class="biz-title">店舗運営・オペレーション</div>
+        <div class="biz-desc">接客・鑑定・査定・販売までを一貫して担うスタッフ体制を構築。リピート率と口コミ評価を重要指標とし、顧客満足度の向上と地域への信頼醸成を通じて事業基盤を強化します。</div>
+        <div class="biz-badge">接客品質・査定精度を重視</div>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#2d6a4f" stroke-width="2"/><path d="M9 22V12h6v10" stroke="#2d6a4f" stroke-width="2"/></svg></div>
+        <div class="biz-num">03</div>
+        <div class="biz-title">多店舗展開・経営者輩出</div>
+        <div class="biz-desc">2028年までに関西圏内10店舗以上の展開を計画。優秀なスタッフを店長・経営者として登用し、子会社設立・経営者3名以上の輩出を目指します。</div>
+        <div class="biz-badge">2028年 10店舗目標</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- VISION -->
 <div id="vision" class="vision-wrap">
   <div class="vision-inner">
     <div class="vision-text">
@@ -310,6 +417,7 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   </div>
 </div>
 
+<!-- VALUES -->
 <div id="values" class="values-wrap">
   <div class="values-inner">
     <div class="sec-label">Values</div>
@@ -320,26 +428,24 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
       <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#2d6a4f" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="value-num">02</div><div class="value-label">仲間への感謝</div></div>
       <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="value-num">03</div><div class="value-label">凡事徹底</div></div>
       <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#2d6a4f" stroke-width="2"/></svg></div><div class="value-num">04</div><div class="value-label">誠実であること</div></div>
-      <div class="value-card"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="value-num">05</div><div class="value-label">素直に元気よく</div></div>
+      <div class="value-card" style="grid-column:1/-1;max-width:calc(50% - 6px);"><div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/></svg></div><div class="value-num">05</div><div class="value-label">素直に元気よく</div></div>
     </div>
   </div>
 </div>
 
+<!-- MESSAGE -->
 <div id="message" class="msg-wrap">
   <div class="msg-inner">
     <div class="sec-label">Message</div>
     <h2 class="sec-title">代表<strong>メッセージ</strong></h2>
     <div class="divider"></div>
     <div class="msg-profile">
-      <div style="width:4px;height:60px;background:var(--accent);border-radius:2px;flex-shrink:0;display:none" class="msg-bar"></div>
-      <div>
-        <div class="msg-name">富永 隆幸</div>
-        <div class="msg-role">代表取締役 ／ 株式会社color</div>
-        <div class="msg-career">
-          <div class="career-item"><span class="career-year">18歳</span>美容師としてキャリアスタート</div>
-          <div class="career-item"><span class="career-year">24歳</span>個人事業主として独立</div>
-          <div class="career-item"><span class="career-year">現在</span>株式会社diptyMOILA 代表・スタッフ30名超</div>
-        </div>
+      <div class="msg-name">富永 隆幸</div>
+      <div class="msg-role">代表取締役 ／ 株式会社color</div>
+      <div class="msg-career">
+        <div class="career-item"><span class="career-year">18歳</span>美容師としてキャリアスタート</div>
+        <div class="career-item"><span class="career-year">24歳</span>個人事業主として独立</div>
+        <div class="career-item"><span class="career-year">現在</span>株式会社diptyMOILA 代表・スタッフ30名超</div>
       </div>
     </div>
     <div class="msg-body">
@@ -352,6 +458,7 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   </div>
 </div>
 
+<!-- COMPANY -->
 <div id="company" class="company-wrap">
   <div class="company-inner">
     <div class="sec-label">Company</div>
@@ -369,13 +476,16 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
   </div>
 </div>
 
+<!-- RECRUIT -->
 <div id="recruit" class="recruit-wrap">
   <div class="recruit-inner">
     <div class="sec-label">Recruit</div>
     <h2 class="sec-title">一緒に、<strong>個性を輝かせる仕事をしよう。</strong></h2>
     <div class="divider"></div>
     <div class="recruit-intro">
-      <div class="recruit-catch">資格も学歴も、<br><strong>ここでは関係ない。</strong></div>
+      <div>
+        <div class="recruit-catch">資格も学歴も、<br><strong>ここでは関係ない。</strong></div>
+      </div>
       <div class="recruit-points">
         <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>未経験でも研修制度で着実にスキルアップ</div>
         <div class="recruit-point"><div class="point-check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>成果はインセンティブでしっかり還元</div>
@@ -384,17 +494,49 @@ footer{background:var(--black);color:rgba(255,255,255,.35);padding:28px 24px;dis
       </div>
     </div>
     <div class="job-cards">
-      <div class="job-card"><div class="job-tag">アルバイト</div><div class="job-title">接客・査定スタッフ</div><div class="job-cond"><div class="job-row"><span class="job-key">給与</span>日給 15,000円</div><div class="job-row"><span class="job-key">勤務時間</span>9:45〜19:15（休憩1.5h）</div><div class="job-row"><span class="job-key">勤務日数</span>週2日以上</div></div><div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋2万円、以降50万円ごとに＋2万円（上限20万円）</div></div>
-      <div class="job-card"><div class="job-tag">業務委託</div><div class="job-title">査定・店舗管理スタッフ</div><div class="job-cond"><div class="job-row"><span class="job-key">報酬</span>月額 35〜45万円</div><div class="job-row"><span class="job-key">稼働</span>週5日（月22日）</div></div><div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋5万円、以降50万円ごとに＋5万円（上限50万円）</div></div>
+      <div class="job-card">
+        <div class="job-tag">アルバイト</div>
+        <div class="job-title">接客・査定スタッフ</div>
+        <div class="job-cond">
+          <div class="job-row"><span class="job-key">給与</span>日給 15,000円</div>
+          <div class="job-row"><span class="job-key">勤務時間</span>9:45〜19:15（休憩1.5h）</div>
+          <div class="job-row"><span class="job-key">勤務日数</span>週2日以上</div>
+        </div>
+        <div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋2万円、以降50万円ごとに＋2万円（上限20万円）</div>
+      </div>
+      <div class="job-card">
+        <div class="job-tag">業務委託</div>
+        <div class="job-title">査定・店舗管理スタッフ</div>
+        <div class="job-cond">
+          <div class="job-row"><span class="job-key">報酬</span>月額 35〜45万円</div>
+          <div class="job-row"><span class="job-key">稼働</span>週5日（月22日）</div>
+        </div>
+        <div class="incentive-box">🎯 インセンティブ：粗利600万円以上で＋5万円、以降50万円ごとに＋5万円（上限50万円）</div>
+      </div>
     </div>
     <div class="recruit-req">
-      <div><div class="req-title">応募要件（共通）</div><ul class="req-list"><li>高卒以上</li><li>社会人経験2年以上</li><li>45歳まで</li></ul></div>
-      <div><div class="req-title">求める人物像</div><ul class="req-list"><li>明るく元気よく挨拶できる方</li><li>自責思考で仲間に感謝・応援できる方</li><li>コツコツと誠実に努力できる方</li></ul></div>
+      <div>
+        <div class="req-title">応募要件（共通）</div>
+        <ul class="req-list">
+          <li>高卒以上</li>
+          <li>社会人経験2年以上</li>
+          <li>45歳まで</li>
+        </ul>
+      </div>
+      <div>
+        <div class="req-title">求める人物像</div>
+        <ul class="req-list">
+          <li>明るく元気よく挨拶できる方</li>
+          <li>自責思考で仲間に感謝・応援できる方</li>
+          <li>コツコツと誠実に努力できる方</li>
+        </ul>
+      </div>
     </div>
     <div class="recruit-cta"><a href="recruit.html" class="btn btn-primary">採用情報の詳細を見る</a></div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <span class="footer-logo"><em>c</em>olor Inc.</span>
   <span>© 2024 株式会社color. All rights reserved.</span>
